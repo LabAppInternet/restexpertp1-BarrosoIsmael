@@ -1,5 +1,6 @@
 package cat.tecnocampus.notes.application.DTOs;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
@@ -27,12 +28,11 @@ public class NoteLabDTO {
     public NoteLabDTO() {
     }
 
-    /*
+    //corregir jackson
+    @JsonBackReference //Esto evitará que Jackson entre en un ciclo infinito al serializar objetos relacionados
     public UserLabDTO getOwner() {
         return owner;
     }
-
-     */
 
     public void setOwner(UserLabDTO owner) {
         this.owner = owner;
