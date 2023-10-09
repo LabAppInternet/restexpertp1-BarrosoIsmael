@@ -29,7 +29,7 @@ public class NoteLabDTO {
     }
 
     //corregir jackson
-    @JsonBackReference //Esto evitará que Jackson entre en un ciclo infinito al serializar objetos relacionados
+        @JsonBackReference //Esto evitará que Jackson entre en un ciclo infinito al serializar objetos relacionados
     public UserLabDTO getOwner() {
         return owner;
     }
